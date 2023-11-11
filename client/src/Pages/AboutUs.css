@@ -18,3 +18,9 @@
 .about-sec h2 {
     margin: 2rem 0;
 }
+
+@media only screen and (max-width: 600px) {
+    .aboutus-sec .about-img img {
+        width: 20rem;
+    }
+  }
