@@ -1,0 +1,23 @@
+/* Universal styling */
+
+/* Font Use in this website */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Roboto:wght@300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+/* font-family: 'Roboto', sans-serif; */
+}
+
+/* Utilities */
+:root {
+  --main-color-first: #E81A22;
+  --main-color-second: #314088;
+  --white: #ffffff;
+  --black: #000000;
+  --text-color: #747474;
+}
+
+
