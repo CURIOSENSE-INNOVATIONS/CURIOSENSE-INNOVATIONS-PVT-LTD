@@ -26,3 +26,12 @@ address {
 .social-media-sec {
   font-size: small;
 }
+
+@media only screen and (max-width: 600px) {
+  footer {
+    display: block;
+  }
+  .address-sec {
+    margin-bottom: 2rem;
+  }
+}
