@@ -22,7 +22,7 @@ const Footer = () => {
         <span> | </span>
         <span>Privacy Policy</span>
 
-      <p>&copy; 2023 Curiosense Innovations. All rights reserved.</p>
+      <p> &copy; 2023 Curiosense Innovations. All rights reserved.</p>
       </div>
     </footer>
   );
