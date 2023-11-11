@@ -11,6 +11,12 @@
 /* font-family: 'Roboto', sans-serif; */
 }
 
+.title {
+  text-align: center;
+  margin: 2rem 0px;
+  font-size: 2rem;
+}
+
 /* Utilities */
 :root {
   --main-color-first: #E81A22;
