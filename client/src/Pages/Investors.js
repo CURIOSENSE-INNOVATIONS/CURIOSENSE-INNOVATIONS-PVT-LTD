@@ -2,7 +2,10 @@ import React from 'react'
 
 const Investors = () => {
   return (
-    <div>Investors</div>
+    <>
+    <div className="title">Our Investors</div>
+    
+    </>
   )
 }
 
