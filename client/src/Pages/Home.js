@@ -3,20 +3,20 @@ import React from 'react'
 import "./Home.css"
 
 import img1 from "../Images/Assets/assets6.jpeg"
-import About from "../Pages/AboutUs"
+import { Link } from 'react-router-dom'
 
 const Home = () => {
-
-  const homeHeader = "Welcome to Curiosense Innovations"
   
   return (
 
     <>
       <div className="home-sec">
         <div className="home-cnt">
-          <h2>{homeHeader}</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque atque nostrum quae molestiae quo esse cumque, nemo accusantium, facilis aspernatur tempore? Doloribus quam ratione voluptates voluptate odio omnis ullam sequi ad dolorum dolore quo placeat ducimus reiciendis esse consequuntur eligendi eum, neque cumque facere dolor. Autem, obcaecati debitis. Excepturi, vero? </p>
-          <button className="buy-button home-btn" onClick={() => <About />}>Explore More →</button>
+          <h2>Welcome To <br /> <span className='subHeading'>Curiosense Innovations</span></h2>
+          <p>Curiosense Innovations prioritizes a play-centric, curiosity-driven approach for resilient minds. Emphasizing holistic development and mental well-being, they collaborate with parents, teachers, experts and schools to form a comprehensive learning ecosystem. With innovative tools, they prepare children not just for today but also for future opportunities, focusing on skill development and lifelong success.</p>
+          <Link to='/about'>
+          <button className="buy-button home-btn"> Explore More →</button>
+          </Link>
         </div>
         <div className="home-img">
           <img className="animation" src={img1} />

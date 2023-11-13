@@ -1,6 +1,8 @@
 import React from "react";
 import "./AboutUs.css";
-import image1 from "../Images/Assets/assets8.jpeg";
+import image1 from "../Images/Assets/assets3.jpeg";
+import image2 from "../Images/Assets/assets7.jpeg";
+import image3 from "../Images/Assets/assets2.jpeg";
 
 export const AboutUs = () => {
   
@@ -60,6 +62,8 @@ export const AboutUs = () => {
       <div className="aboutus-sec">
         <div className="about-img">
           <img src={image1} />
+          <img className="animation" src={image2} />
+          <img src={image3} />
         </div>
         <div className="about-sec">
           <h2> {aboutHeaders} </h2>

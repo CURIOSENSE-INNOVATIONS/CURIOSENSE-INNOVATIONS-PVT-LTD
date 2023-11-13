@@ -12,6 +12,16 @@
   background-size: cover;
 }
 
+.subHeading {
+  font-size: 2.5rem;
+  background: -webkit-linear-gradient(
+    rgba(232, 26, 34, 1),
+    rgba(49, 64, 136, 1)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .home-sec .home-cnt {
   width: 60%;
   padding: 0 5rem;
@@ -24,7 +34,6 @@
 
 .home-img img {
   width: 25rem;
-  
 }
 
 .home-img img {
@@ -57,18 +66,21 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .home-sec {
-        display: block;
-        padding: 3rem;
-        height: 100vh;
-    }
+  .home-sec {
+    display: block;
+    padding: 3rem;
+    height: 105vh;
+  }
 
-    .home-sec .home-cnt {
-        width: 100%;
-        padding: 0rem;
-      }
+  .home-sec .home-cnt {
+    width: 100%;
+    padding: 0rem;
+  }
 
-    .home-img img {
-        width: 20rem;
-    }
+  .home-img img {
+    width: 20rem;
+    border-radius: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    
+  }
 }

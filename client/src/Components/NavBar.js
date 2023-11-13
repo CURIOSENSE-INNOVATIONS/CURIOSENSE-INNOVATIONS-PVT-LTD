@@ -1,6 +1,6 @@
 import React from "react";
 import "../Components/NavBar.css"
-import Logo from "../Images/logo.png"
+import Logo from "../Images/Logo.jpeg"
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
@@ -15,7 +15,7 @@ const NavBar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <NavLink to="/home"> <img src={Logo} /> </NavLink>
+          <NavLink to="/"> <img src={Logo} /> </NavLink>
         </div>
         <div className={`navbar-links ${isOpen ? "active" : ""}`}>
           <Link to='/home'>Home</Link>

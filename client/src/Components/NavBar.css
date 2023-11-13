@@ -21,7 +21,7 @@
 }
 
 .navbar-logo img {
-  width: 7rem;
+  width: 18rem;
 }
 
 .navbar-links {
@@ -64,10 +64,18 @@
     top: 5rem;
     left: 0;
     width: 100%;
-    background-color: var(--main-color-second);
+    background: rgb(232, 26, 34);
+  background: linear-gradient(
+    123deg,
+    rgba(232, 26, 34, 1) 15%,
+    rgba(49, 64, 136, 1) 100%
+  );
   }
 
   .navbar-links a {
+    color: var(--white);
+  }
+  .navbar-links a:hover {
     color: var(--white);
   }
 

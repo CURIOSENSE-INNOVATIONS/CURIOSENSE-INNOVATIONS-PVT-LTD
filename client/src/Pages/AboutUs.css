@@ -1,26 +1,45 @@
+.aboutus-sec .about-img {
+  display: flex;
+  margin: auto;
+  width: 90%;
+}
+
+.about-img .animation {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
 .aboutus-sec .about-img img {
-    width: 30rem;
-    margin: 2rem auto;
-    display: flex;
-    justify-content: center;
+  width: 20rem;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .about-sec {
-    width: 85%;
-    margin: auto;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    text-align: justify;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    border-radius: 10px;
+  width: 85%;
+  margin: 3rem auto;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: justify;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  border-radius: 10px;
+  background-color: rgba(226, 229, 255, 0.404);
 }
 
 .about-sec h2 {
-    margin: 2rem 0;
+  margin: 2rem 0;
 }
 
 @media only screen and (max-width: 600px) {
-    .aboutus-sec .about-img img {
-        width: 20rem;
-    }
+  .about-sec {
+    text-align: left;
   }
+  .aboutus-sec .about-img {
+    display: block;
+  }
+  .aboutus-sec .about-img img {
+    width: 20rem;
+  }
+}

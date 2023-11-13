@@ -1,0 +1,38 @@
+.mainInvestorSec {
+    height: 80vh;
+    display: flex;
+}
+.investorSec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+.investerImgLogo img {
+    width: 20rem;
+}
+
+.investorCntSec {
+    width: 60%;
+    text-align: justify;
+}
+
+.investorCnt {
+    margin-top: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .investorSec {
+        display: block;
+    }
+    .investerImgLogo img {
+        margin: auto;
+        display: flex;
+    }
+    .investorCntSec {
+        width: 100%;
+        margin: 0.2rem auto;
+    }
+  }
+  
