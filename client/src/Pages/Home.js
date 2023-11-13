@@ -6,8 +6,9 @@ import img1 from "../Images/Assets/assets6.jpeg"
 import About from "../Pages/AboutUs"
 
 const Home = () => {
-  
+
   const homeHeader = "Welcome to Curiosense Innovations"
+  
   return (
 
     <>
