@@ -26,3 +26,25 @@ address {
 .social-media-sec {
   font-size: small;
 }
+
+.icons {
+  margin: 0.9rem 0rem;
+  margin-right: 1.5rem;
+}
+
+.icons:hover {
+  cursor: pointer;
+}
+
+a {
+  color: var(--white);
+}
+
+@media only screen and (max-width: 600px) {
+  footer {
+    display: block;
+  }
+  .address-sec {
+    margin-bottom: 2rem;
+  }
+}

@@ -6,6 +6,7 @@
   padding: 10px 20px;
   color: #000;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  z-index: -1;
 }
 
 .navbar-container {
@@ -20,7 +21,7 @@
 }
 
 .navbar-logo img {
-  width: 7rem;
+  width: 18rem;
 }
 
 .navbar-links {
@@ -63,10 +64,18 @@
     top: 5rem;
     left: 0;
     width: 100%;
-    background-color: var(--main-color-second);
+    background: rgb(232, 26, 34);
+  background: linear-gradient(
+    123deg,
+    rgba(232, 26, 34, 1) 15%,
+    rgba(49, 64, 136, 1) 100%
+  );
   }
 
   .navbar-links a {
+    color: var(--white);
+  }
+  .navbar-links a:hover {
     color: var(--white);
   }
 
