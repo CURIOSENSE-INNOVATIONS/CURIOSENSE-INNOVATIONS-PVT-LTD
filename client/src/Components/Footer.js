@@ -20,7 +20,7 @@ const Footer = () => {
       </div>
       <div className="social-media-sec">
         <div className="social-icons">
-          <a href="tel:+919901940345">
+          <a href="tel:+918861470883">
             <FontAwesomeIcon icon={faPhone} size="2xl" className="icons" />
           </a>
           <a href="mailto:curiosense.co.in@gmail.com">

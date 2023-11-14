@@ -26,6 +26,9 @@
   .mainInvestorSec {
     height: unset;
   }
+  .investmentHeading {
+    font-size: 2.2rem;
+  }
   .investorSec {
     display: block;
   }
