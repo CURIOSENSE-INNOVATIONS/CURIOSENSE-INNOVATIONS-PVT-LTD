@@ -1,0 +1,10 @@
+.productSec {
+    display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+    .productSec {
+        display: block;
+    }
+    
+  }

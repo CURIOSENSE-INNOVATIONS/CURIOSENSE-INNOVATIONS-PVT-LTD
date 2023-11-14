@@ -35,8 +35,8 @@ const Footer = () => {
         <Link className="span" to="https://www.linkedin.com/in/rakesh-kumar18/">
           <span>Developer</span>
         </Link>
-
-        <p> &copy; 2023 Curiosense Innovations. All rights reserved.</p>
+        
+        <p>Copyright &copy; 2023, Curiosense Innovations, All Rights Reserved</p>
       </div>
     </footer>
   );

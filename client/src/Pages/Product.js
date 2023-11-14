@@ -1,20 +1,31 @@
-import React from 'react'
-import ProductCard from '../Components/ProductCard'
+import React from "react";
+import ProductCard from "../Components/ProductCard";
+import './Product.css'
 
-import Product1 from '../Images/Products/Product1.jpeg'
+import Product1 from "../Images/Products/Product1.jpeg";
+import Product2 from "../Images/Products/Product2.jpeg";
 
 const Product = () => {
   return (
     <div>
       <div className="title">Our Products</div>
-    <ProductCard
-      name="CurioBook"
-      bio="Unlock the world of kindergarten basics with our patented device designed for enjoyable learning experiences. Assess learning milestones and identify potential neurological disorders seamlessly."
-      price="1999/-"
-      imageUrl={Product1}
-    />
-  </div>
-  )
-}
+      <div className="productSec">
+        <ProductCard
+          name="CurioBook"
+          bio="Unlock the world of kindergarten basics with our patented device designed for enjoyable learning experiences. Assess learning milestones and identify potential neurological disorders seamlessly."
+          price="₹ 1999/-"
+          imageUrl={Product1}
+          buttonSec="By Now"
+        />
+        <ProductCard
+          name="CurioFit"
+          bio="CurioFit develops physical games for children, designed collaboratively by child psychologists, developmental pediatricians, and nursery teachers. These activities aim for the holistic development of children, fostering physical, cognitive, and social growth"
+          imageUrl={Product2}
+          buttonSec="GAME CREATOR'S ACCOUNT"
+        />
+      </div>
+    </div>
+  );
+};
 
-export default Product
+export default Product;
