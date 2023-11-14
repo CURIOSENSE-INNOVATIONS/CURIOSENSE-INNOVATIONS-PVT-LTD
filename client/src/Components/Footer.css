@@ -44,6 +44,9 @@ a {
   footer {
     display: block;
   }
+  .address-sec h3 {
+    font-size: 1rem;
+  }
   .address-sec {
     margin-bottom: 2rem;
   }

@@ -33,6 +33,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .about-sec h2 {
+    font-size: 1.1rem;
+  }
   .about-sec {
     text-align: left;
   }
