@@ -22,9 +22,9 @@ const Teams = () => {
     },
     {
       name: 'Krishna Raju R',
-      role: 'CTO',
+      role: 'Chief Technology Officer',
       image: `${Team3}`,
-      bio: 'Krishna Raju R, CTO, excels in product design, hardware development, and robotics. A mechatronics engineer, proficient in 3D printing, CAD, and effective project management, contributing to innovative solutions at the intersection of technology and engineering.',
+      bio: 'Krishna Raju R, Chief Technology Officer, excels in product design, hardware development, and robotics. A mechatronics engineer, proficient in 3D printing, CAD, and effective project management, contributing to innovative solutions at the intersection of technology and engineering.',
     },
     {
       name: 'Rakesh Kumar',

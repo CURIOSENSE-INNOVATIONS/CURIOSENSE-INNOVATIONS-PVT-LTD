@@ -21,7 +21,7 @@
 }
 
 .navbar-logo img {
-  width: 18rem;
+  width: 20rem;
 }
 
 .navbar-links {
@@ -85,5 +85,8 @@
 
   .navbar-toggle {
     display: flex;
+  }
+  .navbar-logo img {
+    width: 18.2rem;
   }
 }

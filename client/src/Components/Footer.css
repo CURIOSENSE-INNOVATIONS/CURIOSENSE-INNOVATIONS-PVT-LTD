@@ -27,6 +27,11 @@ address {
   font-size: small;
 }
 
+.social-media-sec .span {
+  text-decoration: unset;
+  
+}
+
 .icons {
   margin: 0.9rem 0rem;
   margin-right: 1.5rem;
@@ -43,6 +48,9 @@ a {
 @media only screen and (max-width: 600px) {
   footer {
     display: block;
+  }
+  .address-sec h3 {
+    font-size: 1rem;
   }
   .address-sec {
     margin-bottom: 2rem;

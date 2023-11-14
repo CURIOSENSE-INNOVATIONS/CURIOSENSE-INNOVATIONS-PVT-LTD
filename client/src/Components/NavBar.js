@@ -21,7 +21,7 @@ const NavBar = () => {
           <Link to='/home'>Home</Link>
           <Link to='/about'>About</Link>
           <Link to='/product'>Products</Link>
-          <Link to='/teams'>Teams</Link>
+          <Link to='/team'>Team</Link>
           <Link to='/investors'>Investors</Link>
           <Link to='/contactus'>Contact Us</Link>
         </div>
