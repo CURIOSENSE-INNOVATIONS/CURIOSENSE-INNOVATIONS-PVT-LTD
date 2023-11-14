@@ -3,6 +3,7 @@ import "./Footer.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -30,6 +31,10 @@ const Footer = () => {
         <span>Terms Of Use</span>
         <span> | </span>
         <span>Privacy Policy</span>
+        <span> | </span>
+        <Link className="span" to="https://www.linkedin.com/in/rakesh-kumar18/">
+          <span>Developer</span>
+        </Link>
 
         <p> &copy; 2023 Curiosense Innovations. All rights reserved.</p>
       </div>

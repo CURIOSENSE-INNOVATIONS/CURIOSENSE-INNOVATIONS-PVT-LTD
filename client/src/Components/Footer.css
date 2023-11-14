@@ -27,6 +27,11 @@ address {
   font-size: small;
 }
 
+.social-media-sec .span {
+  text-decoration: unset;
+  
+}
+
 .icons {
   margin: 0.9rem 0rem;
   margin-right: 1.5rem;

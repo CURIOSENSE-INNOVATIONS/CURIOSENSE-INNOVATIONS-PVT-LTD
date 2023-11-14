@@ -10,7 +10,7 @@ const Product = () => {
     <ProductCard
       name="CurioBook"
       bio="Unlock the world of kindergarten basics with our patented device designed for enjoyable learning experiences. Assess learning milestones and identify potential neurological disorders seamlessly."
-      price="499/-"
+      price="1999/-"
       imageUrl={Product1}
     />
   </div>

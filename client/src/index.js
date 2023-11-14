@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         element: <Product />
       },
       {
-        path: "teams",
+        path: "team",
         element: <Teams />
       },
       {
