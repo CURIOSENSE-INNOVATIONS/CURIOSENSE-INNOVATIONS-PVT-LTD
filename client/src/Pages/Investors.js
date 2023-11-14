@@ -13,7 +13,7 @@ const Investors = () => {
           <div className="investorCntSec">
             <h2>
               S T A R T U P<br />
-              <span className="subHeading investmentHeading">I N V E S T M E N T</span>
+              <span className="subHeading investmentHeading">INVESTMENT</span>
             </h2>
             <p className="investorCnt">
               Explore the promising landscape of investment with Curiosense
