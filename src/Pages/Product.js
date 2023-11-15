@@ -15,7 +15,7 @@ const Product = () => {
           bio="Unlock the world of kindergarten basics with our patented device designed for enjoyable learning experiences. Assess learning milestones and identify potential neurological disorders seamlessly."
           price="₹ 1999/-"
           imageUrl={Product1}
-          buttonSec="By Now"
+          buttonSec="Buy Now"
         />
         <ProductCard
           name="CurioFit"
