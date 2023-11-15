@@ -18,12 +18,12 @@ const NavBar = () => {
           <NavLink to="/"> <img src={Logo} /> </NavLink>
         </div>
         <div className={`navbar-links ${isOpen ? "active" : ""}`}>
-          <Link to='/home'>Home</Link>
-          <Link to='/about'>About</Link>
-          <Link to='/product'>Products</Link>
-          <Link to='/team'>Team</Link>
-          <Link to='/investors'>Investors</Link>
-          <Link to='/contactus'>Contact Us</Link>
+          <Link to='/home' onClick={toggleNavbar}>Home</Link>
+          <Link to='/about' onClick={toggleNavbar}>About</Link>
+          <Link to='/product' onClick={toggleNavbar}>Products</Link>
+          <Link to='/team' onClick={toggleNavbar}>Team</Link>
+          <Link to='/investors' onClick={toggleNavbar}>Investors</Link>
+          <Link to='/contactus' onClick={toggleNavbar}>Contact Us</Link>
         </div>
         <div className="navbar-toggle" onClick={toggleNavbar}>
           <span></span>
