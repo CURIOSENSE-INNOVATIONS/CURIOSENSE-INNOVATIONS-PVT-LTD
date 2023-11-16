@@ -15,7 +15,7 @@ const NavBar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <NavLink to="/">
+          <NavLink to={`/`}>
             {" "}
             <img src={Logo} />{" "}
           </NavLink>
