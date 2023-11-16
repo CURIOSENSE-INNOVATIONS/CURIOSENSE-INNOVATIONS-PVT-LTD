@@ -8,7 +8,7 @@ const ErrorPage = () => {
       <h1>404 - Not Found</h1>
       <p>Sorry, the page you are looking for might be in another castle.</p>
       <div className="error-image">
-        <img src={errorImage} alt="Error Illustration" />
+        <img src={ errorImage } alt="Error Illustration" />
       </div>
     </div>
   )
