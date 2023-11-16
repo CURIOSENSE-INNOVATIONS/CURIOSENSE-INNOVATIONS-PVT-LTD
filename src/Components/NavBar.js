@@ -3,6 +3,7 @@ import "../Components/NavBar.css";
 import Logo from "../Images/Logo.jpeg";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { ABOUT, CONTACT, HOME, INVESTORS, PRODUCT, TEAM } from "../Routes/Routes";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,22 +22,22 @@ const NavBar = () => {
           </NavLink>
         </div>
         <div className={`navbar-links ${isOpen ? "active" : ""}`}>
-          <Link to={`/home`} onClick={toggleNavbar}>
+          <Link to={HOME} onClick={toggleNavbar}>
             Home
           </Link>
-          <Link to={`/about`} onClick={toggleNavbar}>
+          <Link to={ABOUT} onClick={toggleNavbar}>
             About
           </Link>
-          <Link to={`/product`} onClick={toggleNavbar}>
+          <Link to={PRODUCT} onClick={toggleNavbar}>
             Products
           </Link>
-          <Link to={`/team`} onClick={toggleNavbar}>
+          <Link to={TEAM} onClick={toggleNavbar}>
             Team
           </Link>
-          <Link to={`/investors`} onClick={toggleNavbar}>
+          <Link to={INVESTORS} onClick={toggleNavbar}>
             Investors
           </Link>
-          <Link to={`/contactus`} onClick={toggleNavbar}>
+          <Link to={CONTACT} onClick={toggleNavbar}>
             Contact Us
           </Link>
         </div>
