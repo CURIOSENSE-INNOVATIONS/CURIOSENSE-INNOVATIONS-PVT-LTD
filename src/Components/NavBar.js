@@ -21,22 +21,22 @@ const NavBar = () => {
           </NavLink>
         </div>
         <div className={`navbar-links ${isOpen ? "active" : ""}`}>
-          <Link to={`home`} onClick={toggleNavbar}>
+          <Link to={`/home`} onClick={toggleNavbar}>
             Home
           </Link>
-          <Link to={`about`} onClick={toggleNavbar}>
+          <Link to={`/about`} onClick={toggleNavbar}>
             About
           </Link>
-          <Link to={`product`} onClick={toggleNavbar}>
+          <Link to={`/product`} onClick={toggleNavbar}>
             Products
           </Link>
-          <Link to={`team`} onClick={toggleNavbar}>
+          <Link to={`/team`} onClick={toggleNavbar}>
             Team
           </Link>
-          <Link to={`investors`} onClick={toggleNavbar}>
+          <Link to={`/investors`} onClick={toggleNavbar}>
             Investors
           </Link>
-          <Link to={`contactus`} onClick={toggleNavbar}>
+          <Link to={`/contactus`} onClick={toggleNavbar}>
             Contact Us
           </Link>
         </div>
