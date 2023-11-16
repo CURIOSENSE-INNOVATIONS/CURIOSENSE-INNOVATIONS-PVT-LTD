@@ -8,6 +8,7 @@ import ContactUs from "../Pages/ContactUs";
 import Investors from "../Pages/Investors";
 import Teams from "../Pages/Teams";
 import Product from "../Pages/Product";
+import LoginPage from "../Pages/LoginPage";
 
 export const ROOT = "/";
 export const HOME = "/home";
@@ -16,6 +17,7 @@ export const PRODUCT = "/product";
 export const TEAM = "/team";
 export const INVESTORS = "/investors";
 export const CONTACT = "/contact";
+export const LOGIN = "/login"
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +52,10 @@ export const router = createBrowserRouter([
       {
         path: CONTACT,
         element: <ContactUs />,
+      },
+      {
+        path: LOGIN,
+        element: <LoginPage />,
       },
     ],
   },

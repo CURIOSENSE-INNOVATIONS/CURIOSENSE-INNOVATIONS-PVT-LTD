@@ -1,6 +1,7 @@
 import React from "react";
 import '../Components/ProductCard.css'
 import { Link } from "react-router-dom";
+import { LOGIN } from "../Routes/Routes";
 
 const ProductCard = ({ name, price, imageUrl, bio, buttonSec }) => {
   return (
@@ -10,7 +11,7 @@ const ProductCard = ({ name, price, imageUrl, bio, buttonSec }) => {
         <h2 className="product-name">{name}</h2>
         <p className="product-price">{price}</p>
         <p className="product-price bio">{bio}</p>
-        <Link to='/contactus'>
+        <Link to={LOGIN}>
         <button className="buy-button">{buttonSec}</button>
         </Link>
       </div>
