@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5a80b0c3.css",
-    "main.js": "/static/js/main.1b690138.js",
+    "main.css": "/static/css/main.ddec3b8c.css",
+    "main.js": "/static/js/main.718bb924.js",
     "static/media/Team4.jpeg": "/static/media/Team4.9d65f0dfe185ddab8861.jpeg",
     "static/media/assets2.jpeg": "/static/media/assets2.1739ebbce5346b8e71eb.jpeg",
     "static/media/assets6.jpeg": "/static/media/assets6.4b64ce8d9984605f4570.jpeg",
@@ -9,17 +9,18 @@
     "static/media/Product2.jpeg": "/static/media/Product2.3bc6a912b1d8013d269f.jpeg",
     "static/media/assets3.jpeg": "/static/media/assets3.3bc6a912b1d8013d269f.jpeg",
     "static/media/Team2.jpeg": "/static/media/Team2.2d5b31d61a36c75ba3b0.jpeg",
-    "static/media/InvestmentLogo.svg": "/static/media/InvestmentLogo.9250c5a3423b25184719b9cb14a78e44.svg",
+    "static/media/InvestmentLogo.svg": "/static/media/InvestmentLogo.ad439fd38afd8124b5f1813cca8578fd.svg",
+    "static/media/logo.png": "/static/media/logo.5c7560ccca71a9239137.png",
     "static/media/Team1.jpeg": "/static/media/Team1.80205465bf9b66a3c855.jpeg",
     "static/media/Product1.jpeg": "/static/media/Product1.fa8bd8ecaf143eeaa524.jpeg",
     "static/media/Team3.jpeg": "/static/media/Team3.849e46f29d5985ad4677.jpeg",
     "static/media/Logo.jpeg": "/static/media/Logo.b6952e74daf1ec69592a.jpeg",
     "index.html": "/index.html",
-    "main.5a80b0c3.css.map": "/static/css/main.5a80b0c3.css.map",
-    "main.1b690138.js.map": "/static/js/main.1b690138.js.map"
+    "main.ddec3b8c.css.map": "/static/css/main.ddec3b8c.css.map",
+    "main.718bb924.js.map": "/static/js/main.718bb924.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a80b0c3.css",
-    "static/js/main.1b690138.js"
+    "static/css/main.ddec3b8c.css",
+    "static/js/main.718bb924.js"
   ]
 }
