@@ -9,19 +9,21 @@ import ContactUs from './Pages/ContactUs';
 import Investors from './Pages/Investors';
 import Teams from './Pages/Teams';
 import Product from './Pages/Product';
+import ErrorPage from './Pages/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <ErrorPage />,
     children : [
       {
         path: "",
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "/home",
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "/about",
