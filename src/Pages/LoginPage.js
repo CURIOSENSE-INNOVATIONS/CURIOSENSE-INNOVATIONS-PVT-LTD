@@ -1,6 +1,7 @@
 // LoginPage.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { SIGNUP } from "../Routes/Routes";
 import "./LoginPage.css";
 
 const LoginPage = () => {
@@ -39,7 +40,7 @@ const LoginPage = () => {
             Login
           </button>
           <div className="login-footer">
-        Don't have an account? <Link to="/SignupPage" className="signupLink">Sign Up</Link>
+        Don't have an account? <Link to={SIGNUP} className="signupLink">Sign Up</Link>
       </div>
         </form>
       </div>
