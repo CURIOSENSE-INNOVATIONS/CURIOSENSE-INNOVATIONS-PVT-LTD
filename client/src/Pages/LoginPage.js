@@ -19,7 +19,7 @@ const LoginPage = () => {
         <h2>Login To CurioFit</h2>
         <form>
           <div className="input-group">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">Email Id</label>
             <input
               type="text"
               id="username"
