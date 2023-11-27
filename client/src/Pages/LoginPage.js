@@ -10,6 +10,7 @@ const LoginPage = () => {
 
   const handleLogin = () => {
     // Perform login logic here
+    alert("Sorry, this feature is not available right now! CI pvt ltd.")
     console.log(`Login with username: ${username} and password: ${password}`);
   };
 
