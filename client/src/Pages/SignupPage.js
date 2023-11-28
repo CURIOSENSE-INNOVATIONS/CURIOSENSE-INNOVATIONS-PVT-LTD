@@ -3,8 +3,13 @@ import "./SignupPages.css";
 import { Link } from "react-router-dom";
 import { LOGIN } from "../Routes/Routes";
 
-
 const SignupPage = () => {
+
+  const handleSignup = () => {
+    // Perform login logic here
+    alert("Sorry, this feature is not available right now! CI pvt ltd.")
+    // console.log(`Login with username: ${username} and password: ${password}`);
+  };
   return (
     <>
       <div className="login-container">
@@ -13,23 +18,31 @@ const SignupPage = () => {
             <h2>Creator's Account Registration</h2>
 
             <div className="input-group">
-              <input type="text" placeholder="Name" disabled/>
+              <input type="text" placeholder="Name" />
             </div>
 
             <div className="input-group">
-              <input type="email" placeholder="Email Id" disabled/>
+              <input type="email" placeholder="Email Id"  />
             </div>
             <div className="input-group">
-              <input type="password" placeholder="Password" disabled/>
+              <input type="password" placeholder="Password"  />
             </div>
             <div className="input-group">
-              <input type="number" placeholder="Phone Number" disabled/>
+              <input type="number" placeholder="Phone Number"  />
             </div>
             <div className="input-group">
-              <input type="text" placeholder="Physical Game Creator Name" disabled/>
+              <input type="text" placeholder="Employee / Govt ID"  />
             </div>
             <div className="input-group">
-              <select id="Profession" name="Profession" disabled>
+              <input
+                type="text"
+                placeholder="Physical Game Creator Name"
+                
+              />
+            </div>
+            <div className="input-group">
+              <select id="Profession" name="Profession" >
+              <option disabled selected value> -- select an option -- </option>
                 <option value="ChildPsychologist">Child Psychologist</option>
                 <option value="PediatricTherapist">Pediatric Therapist</option>
                 <option value="NurseryTeacher">Nursery Teacher</option>
@@ -37,17 +50,22 @@ const SignupPage = () => {
             </div>
             <div className="input-group">
               <textarea
-                name="Biology"
+                name="Biography"
                 id="Bio"
-                placeholder="Biology of the creator in 500 words."
-                disabled
+                placeholder="Biography of the creator in 500 words."
+                
               ></textarea>
             </div>
 
-            <button type="submit" className="login-btn" disabled>Register</button>
+            <button type="submit" className="login-btn" >
+              Register
+            </button>
             <div className="login-footer">
-            Already have an account? <Link to={LOGIN} className="signupLink">Login</Link>
-      </div>
+              Already have an account?{" "}
+              <Link to={LOGIN} className="signupLink">
+                Login
+              </Link>
+            </div>
           </form>
         </div>
       </div>
