@@ -10,6 +10,7 @@ import Teams from "../Pages/Teams";
 import Product from "../Pages/Product";
 import LoginPage from "../Pages/LoginPage";
 import SignupPage from "../Pages/SignupPage";
+import Awards from "../Pages/Awards";
 
 export const ROOT = "/";
 export const HOME = "/home";
@@ -20,6 +21,7 @@ export const INVESTORS = "/investors";
 export const CONTACT = "/contact";
 export const LOGIN = "/login"
 export const SIGNUP = "/signup"
+export const AWARDS = "/awards"
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +52,10 @@ export const router = createBrowserRouter([
       {
         path: INVESTORS,
         element: <Investors />,
+      },
+      {
+        path: AWARDS,
+        element: <Awards />,
       },
       {
         path: CONTACT,
