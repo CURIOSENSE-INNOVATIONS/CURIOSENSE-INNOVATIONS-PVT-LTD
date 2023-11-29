@@ -18,14 +18,15 @@ const SignupPage = () => {
             <h2>Creator's Account Registration</h2>
 
             <div className="input-group">
-              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Username" />
+            </div>
+
+            <div className="input-group">
+              <input type="password" placeholder="Create Password"  />
             </div>
 
             <div className="input-group">
               <input type="email" placeholder="Email Id"  />
-            </div>
-            <div className="input-group">
-              <input type="password" placeholder="Password"  />
             </div>
             <div className="input-group">
               <input type="number" placeholder="Phone Number"  />
