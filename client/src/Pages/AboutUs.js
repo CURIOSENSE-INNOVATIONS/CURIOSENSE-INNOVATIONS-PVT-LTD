@@ -6,7 +6,7 @@ import image3 from "../Images/Assets/assets2.jpeg";
 
 export const AboutUs = () => {
   
-  const aboutHeaders = "Welcome to CURIOSENSE INNOVATIONS PVT LTD";
+  const aboutHeaders = "CURIOSENSE INNOVATIONS PVT LTD";
 
   const aboutDiscription = (
     <p>
@@ -66,7 +66,7 @@ export const AboutUs = () => {
           <img src={image3} />
         </div>
         <div className="about-sec">
-          <h2> {aboutHeaders} </h2>
+          <h2 className="aboutHeader"> {aboutHeaders} </h2>
           <p> {aboutDiscription} </p>
         </div>
       </div>
