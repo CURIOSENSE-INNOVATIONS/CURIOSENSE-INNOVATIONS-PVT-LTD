@@ -1,13 +1,13 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "This is a server file of CI pvt ltd",
+  "description": "This is a server file of Curiosense Innovations",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
-  "author": "Curiosense innovations pvt ltd",
+  "author": "Curiosense Innovations Pvt Ltd",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
