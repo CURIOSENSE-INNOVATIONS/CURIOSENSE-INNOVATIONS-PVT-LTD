@@ -1,0 +1,39 @@
+/* NotFoundPage.css */
+.not-found-container {
+  text-align: center;
+  margin-top: 50px;
+  font-family: "Arial", sans-serif;
+}
+
+.not-found-container h1 {
+  color: #e74c3c;
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+
+.error-image {
+  margin-top: 30px;
+}
+
+.error-image img {
+  width: 200px;
+  height: auto;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
