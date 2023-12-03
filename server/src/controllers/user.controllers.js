@@ -14,7 +14,7 @@ const registerUser = asyncHandler(async (req, res) => {
   // Check for user creation
   // Return response
 
-  const { userName, password, email, phoneNumber, employeeId, creatorName, biography} = req.body;
+  const { userName, password, email, phoneNumber, employeeId, creatorName, profession, biography} = req.body;
 
   if (
     [
@@ -24,6 +24,7 @@ const registerUser = asyncHandler(async (req, res) => {
       phoneNumber,
       employeeId,
       creatorName,
+      profession,
       biography,
     ].some((field) => field?.trim() === "")
   ) {
@@ -45,6 +46,7 @@ const registerUser = asyncHandler(async (req, res) => {
     phoneNumber,
     employeeId,
     creatorName,
+    profession,
     biography,
   });
 

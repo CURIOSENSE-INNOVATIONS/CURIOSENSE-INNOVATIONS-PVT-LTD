@@ -45,6 +45,12 @@ const userSchema = new Schema(
       trim: true,
     },
 
+    profession: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
     biography: {
       type: String,
       required: true,
