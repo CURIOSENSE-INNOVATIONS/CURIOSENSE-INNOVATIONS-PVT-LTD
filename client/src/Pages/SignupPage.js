@@ -11,7 +11,8 @@ import { Link } from "react-router-dom";
 import { LOGIN } from "../Routes/Routes";
 
 const SignupPage = () => {
-  const [formData, setFormData] = useState({
+
+  const initialFormData = {
     userName: "",
     password: "",
     email: "",
@@ -19,8 +20,11 @@ const SignupPage = () => {
     employeeId: "",
     creatorName: "",
     profession: "default",
-    biography: "",
-  });
+    biography: ""
+  }
+
+  const [formData, setFormData] = useState(initialFormData);
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -30,18 +34,29 @@ const SignupPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Form Data:", formData);
-
-    try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_API}/api/v1/users/register`,
-        formData
-      );
-      toast.success('Registration successful! Welcome aboard!');
-    } catch (error) {
-      toast.error("Error sending data", error);
+    // Check if the selected value is the default one
+    if (formData.profession === 'default') {
+      return toast.error('Please select a valid profession');     
+    } else {
+      try {
+        const res = await axios.post(
+          `${process.env.REACT_APP_API}/api/v1/users/register`,
+          formData
+        );
+        toast.success('Registration successful! Welcome aboard!' || res.data);
+        setFormData(initialFormData);
+      } catch (error) {
+        console.error("Error sending data", error);
+        toast.error("Error sending data. Please try again.");
+    
+  
+      }
     }
+
+    
   };
+
+
 
   return (
     <>
@@ -124,7 +139,7 @@ const SignupPage = () => {
                 onChange={handleInputChange}
                 required
               >
-                <option disabled selected value="default">
+                <option disabled selected Value='default'>
                   -- select an option --
                 </option>
                 <option value="Child Psychologist">Child Psychologist</option>
