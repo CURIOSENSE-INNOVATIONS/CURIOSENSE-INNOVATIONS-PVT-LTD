@@ -11,6 +11,7 @@ import Product from "../Pages/Product";
 import LoginPage from "../Pages/LoginPage";
 import SignupPage from "../Pages/SignupPage";
 import Awards from "../Pages/Awards";
+import Dashboard from "../Pages/Dashboard";
 
 export const ROOT = "/";
 export const HOME = "/home";
@@ -22,6 +23,7 @@ export const CONTACT = "/contact";
 export const LOGIN = "/login"
 export const SIGNUP = "/signup"
 export const AWARDS = "/awards"
+export const DASHBOARD = "/dashboard"
 
 export const router = createBrowserRouter([
   {
@@ -68,6 +70,10 @@ export const router = createBrowserRouter([
       {
         path: SIGNUP,
         element: <SignupPage />,
+      },
+      {
+        path: DASHBOARD,
+        element: <Dashboard />,
       },
     ],
   },

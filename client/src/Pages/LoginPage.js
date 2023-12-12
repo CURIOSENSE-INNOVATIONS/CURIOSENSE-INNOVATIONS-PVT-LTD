@@ -1,17 +1,33 @@
 // LoginPage.js
 import React, { useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { SIGNUP } from "../Routes/Routes";
 import "./LoginPage.css";
 
+
 const LoginPage = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     // Perform login logic here
-    alert("Sorry, this feature is not available right now! CI pvt ltd.");
-    console.log(`Login with username: ${username} and password: ${password}`);
+    try {
+      const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/users/login`, { email, password });
+      if (res && res.data) {
+        const token = res.data.token;
+        alert('Login succecss : ', token)
+        
+      } else {
+        console.error('Invalid res format:', res);
+      }
+    } catch (error) {
+      if (error.res && error.res.data) {
+        console.error('Login failed:', error.res.data);
+      } else {
+        console.error('Login failed. No res data:', error);
+      }
+    }
   };
 
   return (
@@ -20,12 +36,12 @@ const LoginPage = () => {
         <h2>Login To CurioFit</h2>
         <form>
           <div className="input-group">
-            <label htmlFor="username">Email Id</label>
+            <label htmlFor="email">Email Id</label>
             <input
               type="text"
-              id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="input-group">
@@ -41,11 +57,13 @@ const LoginPage = () => {
             Login
           </button>
           <div className="login-footer">
-        Don't have an account? <Link to={SIGNUP} className="signupLink">Sign Up</Link>
-      </div>
+            Don't have an account?{" "}
+            <Link to={SIGNUP} className="signupLink">
+              Sign Up
+            </Link>
+          </div>
         </form>
       </div>
-      
     </div>
   );
 };

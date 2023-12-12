@@ -3,7 +3,7 @@ import "../Components/NavBar.css";
 import Logo from "../Images/Logo.jpeg";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { ABOUT, CONTACT, HOME, INVESTORS, PRODUCT, TEAM, AWARDS } from "../Routes/Routes";
+import { ABOUT, CONTACT, HOME, INVESTORS, PRODUCT, TEAM, AWARDS, LOGIN } from "../Routes/Routes";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,6 +42,9 @@ const NavBar = () => {
           </Link>
           <Link to={CONTACT} onClick={toggleNavbar}>
             Contact Us
+          </Link>
+          <Link to={LOGIN} onClick={toggleNavbar}>
+            LogIn
           </Link>
         </div>
         <div className="navbar-toggle" onClick={toggleNavbar}>

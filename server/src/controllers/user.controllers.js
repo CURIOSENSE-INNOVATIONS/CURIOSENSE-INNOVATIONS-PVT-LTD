@@ -14,7 +14,16 @@ const registerUser = asyncHandler(async (req, res) => {
   // Check for user creation
   // Return response
 
-  const { userName, password, email, phoneNumber, employeeId, creatorName, profession, biography} = req.body;
+  const {
+    userName,
+    password,
+    email,
+    phoneNumber,
+    employeeId,
+    creatorName,
+    profession,
+    biography,
+  } = req.body;
 
   if (
     [
@@ -32,7 +41,7 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 
   const existedUser = await User.findOne({
-    $or: [{ userName }, { email }]
+    $or: [{ userName }, { email }],
   });
 
   if (existedUser) {
@@ -63,4 +72,6 @@ const registerUser = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, createdUser, "User registered Successfully"));
 });
 
-export { registerUser, };
+
+
+export { registerUser, loginUser };

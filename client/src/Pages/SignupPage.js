@@ -1,17 +1,16 @@
 import React from "react";
 import axios from "axios";
 
-import { useState } from "react";
+import { useState} from "react";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "./SignupPages.css";
 import { Link } from "react-router-dom";
 import { LOGIN } from "../Routes/Routes";
 
 const SignupPage = () => {
-
   const initialFormData = {
     userName: "",
     password: "",
@@ -20,43 +19,36 @@ const SignupPage = () => {
     employeeId: "",
     creatorName: "",
     profession: "default",
-    biography: ""
-  }
+    biography: "",
+  };
 
   const [formData, setFormData] = useState(initialFormData);
-  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Check if the selected value is the default one
-    if (formData.profession === 'default') {
-      return toast.error('Please select a valid profession');     
+    if (formData.profession === "default") {
+      return toast.error("Please select a valid profession");
     } else {
       try {
         const res = await axios.post(
           `${process.env.REACT_APP_API}/api/v1/users/register`,
           formData
         );
-        toast.success('Registration successful! Welcome aboard!' || res.data);
+        toast.success("Registration successful! Welcome aboard!" || res.data);
         setFormData(initialFormData);
       } catch (error) {
         console.error("Error sending data", error);
         toast.error("Error sending data. Please try again.");
-    
-  
       }
     }
-
-    
   };
-
-
 
   return (
     <>
@@ -139,7 +131,7 @@ const SignupPage = () => {
                 onChange={handleInputChange}
                 required
               >
-                <option disabled selected Value='default'>
+                <option disabled selected Value="default">
                   -- select an option --
                 </option>
                 <option value="Child Psychologist">Child Psychologist</option>
