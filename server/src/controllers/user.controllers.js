@@ -99,7 +99,7 @@ const loginUser = asyncHandler(async (req, res) => {
   // send cookies
 
   const { email, userName, password } = req.body;
-  if (!userName || !email) {
+  if (!(userName || email)) {
     throw new ApiError(400, "Username or password is required");
   }
 
