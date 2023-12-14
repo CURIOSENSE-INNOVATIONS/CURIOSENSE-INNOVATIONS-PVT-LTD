@@ -2,6 +2,7 @@ import React from "react";
 import "./Dashboard.css";
 
 import DashboardImage from '../Images/Assets/assets5.jpeg'
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   return (
@@ -17,10 +18,13 @@ const Dashboard = () => {
             <p>Edit the game created</p>
             <p>Delete the game created</p>
             <p>View created games and responses</p> */}
+            <Link to='/physicalgamereg'>
             <button className="buy-button btn-dashboard">Create a New Game</button>
+          </Link>
+            
         </div>
         <div className="dashborard-right">
-            <img src={DashboardImage} alt="" />
+            <img className="animation" src={DashboardImage} />
         </div>
       </div>
     </section>

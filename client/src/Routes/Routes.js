@@ -12,6 +12,7 @@ import LoginPage from "../Pages/LoginPage";
 import SignupPage from "../Pages/SignupPage";
 import Awards from "../Pages/Awards";
 import Dashboard from "../Pages/Dashboard";
+import PhysicalGameReg from "../Pages/PhysicalGameReg";
 
 export const ROOT = "/";
 export const HOME = "/home";
@@ -24,6 +25,7 @@ export const LOGIN = "/login"
 export const SIGNUP = "/signup"
 export const AWARDS = "/awards"
 export const DASHBOARD = "/dashboard"
+export const PHYSICALGAMEREG = "/physicalgamereg"
 
 export const router = createBrowserRouter([
   {
@@ -74,6 +76,10 @@ export const router = createBrowserRouter([
       {
         path: DASHBOARD,
         element: <Dashboard />,
+      },
+      {
+        path: PHYSICALGAMEREG,
+        element: <PhysicalGameReg />,
       },
     ],
   },
