@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
 
-import { useState} from "react";
+import { useState } from "react";
 
-import { ToastContainer, toast } from "react-toastify";
+import toast, { Toaster } from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css";
 
 import "./SignupPages.css";
@@ -41,11 +41,28 @@ const SignupPage = () => {
           `${process.env.REACT_APP_API}/api/v1/users/register`,
           formData
         );
-        toast.success("Registration successful! Welcome aboard!" || res.data);
+        if (res.status === 201) {
+          toast.success("Registration successful!!");
         setFormData(initialFormData);
+        } else {
+          toast.error(`Server error: ${res.message}`);
+        }
       } catch (error) {
-        console.error("Error sending data", error);
-        toast.error("Error sending data. Please try again.");
+        if (error.response) {
+  
+          // Check if the user already exists
+          if (error.response.status === 409) {
+            toast.error("User already exists.");
+          } else {
+            toast.error(`Server error: ${error.response.data.message}`);
+          }
+        } else if (error.request) {
+          // The request was made but no response was received
+          toast.error("Network error. Please try again later.");
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          toast.error("An unexpected error occurred. Please try again.");
+        }
       }
     }
   };
@@ -154,7 +171,7 @@ const SignupPage = () => {
             <button type="submit" className="login-btn">
               Register
             </button>
-            <ToastContainer />
+            <Toaster />
             <div className="login-footer">
               Already have an account?{" "}
               <Link to={LOGIN} className="signupLink">
