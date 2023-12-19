@@ -30,8 +30,8 @@ const LoginPage = () => {
 
     try {
       const res = await axios.post("/api/v1/users/login",formData)
-      console.log('Login Successful', res.data);
-      toast.success("Login Successful")
+      // console.log('Login Successful', res.data);
+      toast.success("User LoggedIn Successfully", res.data)
 
     } catch (error) {
       console.error('Login Error', error);
