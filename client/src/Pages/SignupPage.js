@@ -1,14 +1,12 @@
 import React from "react";
 import axios from "axios";
-
 import { useState } from "react";
-
 import toast, { Toaster } from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css";
-
 import "./SignupPages.css";
 import { Link } from "react-router-dom";
 import { LOGIN } from "../Routes/Routes";
+
 
 const SignupPage = () => {
   const initialFormData = {
@@ -36,34 +34,39 @@ const SignupPage = () => {
     if (formData.profession === "default") {
       return toast.error("Please select a valid profession");
     } else {
-      try {
-        const res = await axios.post(
-          `${process.env.REACT_APP_API}/api/v1/users/register`,
-          formData
-        );
-        if (res.status === 201) {
-          toast.success("Registration successful!!");
-        setFormData(initialFormData);
-        } else {
-          toast.error(`Server error: ${res.message}`);
-        }
-      } catch (error) {
-        if (error.response) {
-  
-          // Check if the user already exists
-          if (error.response.status === 409) {
-            toast.error("User already exists.");
+
+      await axios
+        .post(`${process.env.REACT_APP_API}/api/v1/users/register`, formData)
+
+        .then((res) => {
+
+          if (res.status === 201) {
+            toast.success("Registration successful!!");
+            setFormData(initialFormData);
           } else {
-            toast.error(`Server error: ${error.response.data.message}`);
+            toast.error(`Server error: ${res.message}`);
           }
-        } else if (error.request) {
-          // The request was made but no response was received
-          toast.error("Network error. Please try again later.");
-        } else {
-          // Something happened in setting up the request that triggered an Error
-          toast.error("An unexpected error occurred. Please try again.");
-        }
-      }
+
+        })
+
+        .catch((error) => {
+
+          if (error.response) {
+            // Check if the user already exists
+            if (error.response.status === 409) {
+              toast.error("User already exists.");
+            } else {
+              toast.error(`Server error: ${error.response.data.message}`);
+            }
+          } else if (error.request) {
+            // The request was made but no response was received
+            toast.error("Network error. Please try again later.");
+          } else {
+            // Something happened in setting up the request that triggered an Error
+            toast.error("An unexpected error occurred. Please try again.");
+          }
+          
+        });
     }
   };
 

@@ -151,6 +151,10 @@ const PhysicalGameReg = () => {
             <button type="submit" className="login-btn" disabled={true}>
               Submit
             </button>
+
+            <div className="input-group">
+              <span>Note : Please upload your video on google drive and make sure your video is on public mode</span>
+            </div>
            
           </form>
         </div>
