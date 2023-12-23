@@ -30,7 +30,7 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    await axios.post("/api/v1/users/login", formData)
+    await axios.post(`${process.env.REACT_APP_API}/api/v1/users/login`, formData)
 
     .then((res)=>{
 
