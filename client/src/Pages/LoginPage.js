@@ -2,42 +2,58 @@
 import React, { useState } from "react";
 
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { SIGNUP } from "../Routes/Routes";
+import { Link, useNavigate } from "react-router-dom";
+import { DASHBOARD, SIGNUP } from "../Routes/Routes";
 
 import "./LoginPage.css";
 
+import { useAuth } from "../Context/auth";
 import toast, { Toaster } from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css";
 
 const LoginPage = () => {
-
   const initialFormData = {
     password: "",
     email: "",
   };
 
   const [formData, setFormData] = useState(initialFormData);
+  const [auth, setAuth] = useAuth();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    try {
-      const res = await axios.post("/api/v1/users/login",formData)
-      // console.log('Login Successful', res.data);
-      toast.success("User LoggedIn Successfully", res.data)
+    await axios.post("/api/v1/users/login", formData)
 
-    } catch (error) {
-      console.error('Login Error', error);
-    }
+    .then((res)=>{
 
-  }
+      if(res.status === 200) {
+        console.log(res.data)
+        toast.success(res.data.message)
+
+        setAuth({
+          ...auth,
+          user: res.data.data.user,
+
+        })
+
+        localStorage.setItem("auth",JSON.stringify(res.data.data.user))
+
+        navigate(DASHBOARD)
+      }
+    })
+
+    .catch((error)=>{
+      toast.error(error.data.message)
+    })
+  };
 
   return (
     <div className="login-container">
@@ -45,7 +61,6 @@ const LoginPage = () => {
         <h2>Login To CurioFit</h2>
 
         <form onSubmit={handleLogin}>
-
           <div className="input-group">
             <label htmlFor="email">Email Id</label>
             <input

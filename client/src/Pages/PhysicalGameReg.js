@@ -1,16 +1,18 @@
 import React from "react";
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 const PhysicalGameReg = () => {
   const initialFormData = {
-    gameTitle: "",
+    gametitle: "",
     age: "",
-    email: "",
     gender: "",
     category: "",
-    howToPlay: "",
-    benefitsOfPlaying: "",
-    itemsRequied: "",
+    howtoplay: "",
+    benefitsofplaying: "",
+    itemsrequied: "",
     url: "",
     score: "",
     level: "",
@@ -25,6 +27,19 @@ const PhysicalGameReg = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    await axios
+        .post('/api/v1/users/PhysicalGameReg', formData)
+
+        .then((res) => {
+
+          if (res.status === 201) {
+            toast.success("Registration successful!!")
+          } else {
+            toast.error(`Server error: ${res.message}`);
+          }
+
+        })
   }
 
   return (
@@ -37,8 +52,8 @@ const PhysicalGameReg = () => {
             <div className="input-group">
               <input
                 type="text"
-                name="gameTitle"
-                value={formData.gameTitle}
+                name="gametitle"
+                value={formData.gametitle}
                 onChange={handleInputChange}
                 placeholder="Game Title"
                 required
@@ -85,9 +100,9 @@ const PhysicalGameReg = () => {
 
             <div className="input-group">
               <textarea
-                id="HowToPlay"
-                name="howToPlay"
-                value={formData.howToPlay}
+                id="Howtoplay"
+                name="howtoplay"
+                value={formData.howtoplay}
                 onChange={handleInputChange}
                 required
                 placeholder="How to Play the Game (in 100 words)."
@@ -96,9 +111,9 @@ const PhysicalGameReg = () => {
 
             <div className="input-group">
               <textarea
-                id="BenefitsOfPlaying"
-                name="benefitsOfPlaying"
-                value={formData.benefitsOfPlaying}
+                id="benefitsofplaying"
+                name="benefitsofplaying"
+                value={formData.benefitsofplaying}
                 onChange={handleInputChange}
                 required
                 placeholder="Benefits of Playing this Game for holistic development (in 50 words)"
@@ -107,9 +122,9 @@ const PhysicalGameReg = () => {
 
             <div className="input-group">
               <textarea
-                id="ItemsRequired"
-                name="itemsRequied"
-                value={formData.itemsRequied}
+                id="itemsrequied"
+                name="itemsrequied"
+                value={formData.itemsrequied}
                 onChange={handleInputChange}
                 required
                 placeholder="Items required to play this game."
@@ -148,7 +163,9 @@ const PhysicalGameReg = () => {
               />
             </div>
 
-            <button type="submit" className="login-btn" disabled={true}>
+            <Toaster/>
+
+            <button type="submit" className="login-btn">
               Submit
             </button>
 

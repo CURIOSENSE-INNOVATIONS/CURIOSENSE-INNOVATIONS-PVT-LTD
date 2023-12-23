@@ -5,8 +5,9 @@
   background-color: #ffffff;
   padding: 10px 20px;
   color: #000;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  z-index: -1;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  /* z-index: -1; */
 }
 
 .navbar-container {
@@ -58,6 +59,7 @@
 
 @media (max-width: 768px) {
   .navbar-links {
+    z-index: 2;
     display: none;
     flex-direction: column;
     position: absolute;
@@ -65,11 +67,11 @@
     left: 0;
     width: 100%;
     background: rgb(232, 26, 34);
-  background: linear-gradient(
-    123deg,
-    rgba(232, 26, 34, 1) 15%,
-    rgba(49, 64, 136, 1) 100%
-  );
+    background: linear-gradient(
+      123deg,
+      rgba(232, 26, 34, 1) 15%,
+      rgba(49, 64, 136, 1) 100%
+    );
   }
 
   .navbar-links a {
