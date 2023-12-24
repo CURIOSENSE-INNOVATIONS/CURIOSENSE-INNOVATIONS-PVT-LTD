@@ -30,29 +30,45 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    await axios.post(`${process.env.REACT_APP_API}/api/v1/users/login`, formData)
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_API}/api/v1/users/login`,
+        formData
+      );
 
-    .then((res)=>{
-
-      if(res.status === 200) {
-        console.log(res.data)
-        toast.success(res.data.message)
+     if (response.status === 200) {
+        const userData = response.data.data.user;
 
         setAuth({
           ...auth,
-          user: res.data.data.user,
+          user: userData,
+        });
 
-        })
+        localStorage.setItem("auth", JSON.stringify(userData));
 
-        localStorage.setItem("auth",JSON.stringify(res.data.data.user))
-
-        navigate(DASHBOARD)
+        await navigate(DASHBOARD);
+        toast.success("User LoggedIn Successfully")
+      } else {
+        toast.error(response.data);
       }
-    })
+    } catch (error) {
+      if (error.response) {
+        const { status } = error.response;
 
-    .catch((error)=>{
-      toast.error(error.data.message)
-    })
+        if (status === 400) {
+          toast.error("Username or password is required");
+        } else if (status === 404) {
+          toast.error("User does not exist");
+        } else if (status === 401) {
+          toast.error("Invalid user credentials");
+        } else {
+          toast.error("Bad request");
+        }
+      } else {
+        console.error("Network error:", error);
+        toast.error("Network error");
+      }
+    }
   };
 
   return (
@@ -69,7 +85,7 @@ const LoginPage = () => {
               id="email"
               value={formData.email}
               onChange={handleInputChange}
-              required
+              // required
             />
           </div>
 
@@ -81,7 +97,7 @@ const LoginPage = () => {
               id="password"
               value={formData.password}
               onChange={handleInputChange}
-              required
+              // required
             />
           </div>
 

@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 import "./Home.css"
 
@@ -6,6 +9,10 @@ import img1 from "../Images/Assets/assets6.jpeg"
 import { Link } from 'react-router-dom'
 
 const Home = () => {
+
+  useEffect(() => {
+    AOS.init({});
+  }, []);
   
   return (
 
@@ -18,7 +25,7 @@ const Home = () => {
           <button className="buy-button home-btn"> Explore More →</button>
           </Link>
         </div>
-        <div className="home-img">
+        <div className="home-img" data-aos="fade-up"  data-aos-duration="1000" data-aos-offset="200">
           <img className="animation" src={img1} />
         </div>
       </div>

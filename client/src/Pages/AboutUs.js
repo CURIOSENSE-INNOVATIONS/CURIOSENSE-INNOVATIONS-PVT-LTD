@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import "./AboutUs.css";
 import image1 from "../Images/Assets/assets3.jpeg";
 import image2 from "../Images/Assets/assets7.jpeg";
 import image3 from "../Images/Assets/assets2.jpeg";
 
 export const AboutUs = () => {
-  
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
   const aboutHeaders = "CURIOSENSE INNOVATIONS PVT LTD";
 
   const aboutDiscription = (
@@ -60,12 +66,17 @@ export const AboutUs = () => {
     <section className="aboutus">
       <div className="title">About Us</div>
       <div className="aboutus-sec">
-        <div className="about-img">
+        <div
+          className="about-img"
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+        >
           <img src={image1} />
           <img className="animation" src={image2} />
           <img src={image3} />
         </div>
-        <div className="about-sec">
+        <div className="aboutMainHeader">
           <h2 className="aboutHeader"> {aboutHeaders} </h2>
           <p> {aboutDiscription} </p>
         </div>
