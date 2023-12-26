@@ -3,6 +3,7 @@ import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import DashboardHeader from "../Components/DashboardHeader";
 
 const PhysicalGameReg = () => {
   const initialFormData = {
@@ -44,8 +45,9 @@ const PhysicalGameReg = () => {
 
   return (
     <>
-      <div className="login-container">
-        <div className="login-box">
+      <DashboardHeader />
+      <div className="login-container signup-container">
+        <div className="login-box signup-box">
           <form onSubmit={handleSubmit}>
             <h2>Create a New Physical Game</h2>
 
