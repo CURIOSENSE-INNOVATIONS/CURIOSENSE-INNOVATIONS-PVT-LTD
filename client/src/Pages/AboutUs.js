@@ -66,17 +66,17 @@ export const AboutUs = () => {
     <section className="aboutus">
       <div className="title">About Us</div>
       <div className="aboutus-sec">
-        <div
-          className="about-img"
-          data-aos="fade-down"
-          data-aos-easing="linear"
-          data-aos-duration="1500"
-        >
+        <div className="about-img">
           <img src={image1} />
           <img className="animation" src={image2} />
           <img src={image3} />
         </div>
-        <div className="aboutMainHeader">
+        <div
+          className="aboutMainHeader"
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+        >
           <h2 className="aboutHeader"> {aboutHeaders} </h2>
           <p> {aboutDiscription} </p>
         </div>

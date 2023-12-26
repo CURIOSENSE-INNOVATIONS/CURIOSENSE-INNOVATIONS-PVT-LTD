@@ -72,8 +72,8 @@ const SignupPage = () => {
 
   return (
     <>
-      <div className="login-container">
-        <div className="login-box">
+      <div className="login-container signup-container">
+        <div className="login-box signup-box">
           <form onSubmit={handleSubmit}>
             <h2>Creator's Account Registration</h2>
 

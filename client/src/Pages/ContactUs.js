@@ -8,8 +8,8 @@ import "./ContactUs.css";
 const ContactUs = () => {
   return (
     <>
-      <div className="title">Contact Us</div>
       <div className="contactus-sec">
+        <div className="title">Contact Us</div>
         <div className="subContactUsSec">
           <div className="contact-logo">
             <FontAwesomeIcon icon={faEnvelope} size="2xl" className="icons" />
