@@ -9,8 +9,9 @@ const PhysicalGameReg = () => {
   const initialFormData = {
     gametitle: "",
     age: "",
-    gender: "",
-    category: "",
+    gender: "default",
+    category: "default",
+    subcategory: "default",
     howtoplay: "",
     benefitsofplaying: "",
     itemsrequied: "",
@@ -30,18 +31,39 @@ const PhysicalGameReg = () => {
     e.preventDefault();
 
     await axios
-        .post('/api/v1/users/PhysicalGameReg', formData)
+      .post(
+        `${process.env.REACT_APP_API}/api/v1/users/physicalgamereg`,
+        formData
+      )
 
-        .then((res) => {
+      .then((res) => {
+        console.log(res);
 
-          if (res.status === 201) {
-            toast.success("Registration successful!!")
+        if (res.status === 201) {
+          
+          toast.success("Registration successful!!");
+        } else {
+          toast.error(`Server error: ${res.message}`);
+        }
+      })
+
+      .catch((error) => {
+        if (error.response) {
+          // Check if the user already exists
+          if (error.response.status === 409) {
+            toast.error("User already exists.");
           } else {
-            toast.error(`Server error: ${res.message}`);
+            toast.error(`Server error: ${error.response.data.message}`);
           }
-
-        })
-  }
+        } else if (error.request) {
+          // The request was made but no response was received
+          toast.error("Network error. Please try again later.");
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          toast.error("An unexpected error occurred. Please try again.");
+        }
+      });
+  };
 
   return (
     <>
@@ -57,7 +79,7 @@ const PhysicalGameReg = () => {
                 name="gametitle"
                 value={formData.gametitle}
                 onChange={handleInputChange}
-                placeholder="Game Title"
+                placeholder="Game Title*"
                 required
               />
             </div>
@@ -68,7 +90,7 @@ const PhysicalGameReg = () => {
                 name="age"
                 value={formData.age}
                 onChange={handleInputChange}
-                placeholder="Suitable Age Group"
+                placeholder="Suitable Age Group*"
                 required
               />
             </div>
@@ -82,7 +104,7 @@ const PhysicalGameReg = () => {
                 required
               >
                 <option disabled selected Value="default">
-                  -- select an option --
+                  -- Suitable for Gender* --
                 </option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -90,14 +112,46 @@ const PhysicalGameReg = () => {
             </div>
 
             <div className="input-group">
-              <input
-                type="text"
+              <select
+                id="category"
                 name="category"
                 value={formData.category}
                 onChange={handleInputChange}
-                placeholder="Category"
                 required
-              />
+              >
+                <option disabled selected Value="default">
+                  -- Category* --
+                </option>
+                <option value="Academic Lessons">Academic Lessons</option>
+                <option value="Behavior Development">
+                  Behavior Development
+                </option>
+                <option value="Cognition Development">
+                  Cognition Development
+                </option>
+                <option value="Motor Skill Development">
+                  Motor Skill Development
+                </option>
+                <option value="Others">Others</option>
+              </select>
+            </div>
+            <div className="input-group">
+              <select
+                id="subcategory"
+                name="subcategory"
+                value={formData.subcategory}
+                onChange={handleInputChange}
+                required
+              >
+                <option disabled selected Value="default">
+                  -- Sub Category* --
+                </option>
+                <option value="Memory Enhancement">Memory Enhancement</option>
+                <option value="Fine Motor Skill">Fine Motor Skill</option>
+                <option value="Academic Lessons Title">
+                  Academic Lessons Title
+                </option>
+              </select>
             </div>
 
             <div className="input-group">
@@ -107,7 +161,7 @@ const PhysicalGameReg = () => {
                 value={formData.howtoplay}
                 onChange={handleInputChange}
                 required
-                placeholder="How to Play the Game (in 100 words)."
+                placeholder="How to Play the Game (in 100 words).*"
               ></textarea>
             </div>
 
@@ -118,7 +172,7 @@ const PhysicalGameReg = () => {
                 value={formData.benefitsofplaying}
                 onChange={handleInputChange}
                 required
-                placeholder="Benefits of Playing this Game for holistic development (in 50 words)"
+                placeholder="Benefits of Playing this Game for holistic development (in 50 words)*"
               ></textarea>
             </div>
 
@@ -129,7 +183,7 @@ const PhysicalGameReg = () => {
                 value={formData.itemsrequied}
                 onChange={handleInputChange}
                 required
-                placeholder="Items required to play this game."
+                placeholder="Items required to play this game.*"
               ></textarea>
             </div>
 
@@ -139,7 +193,7 @@ const PhysicalGameReg = () => {
                 name="url"
                 value={formData.url}
                 onChange={handleInputChange}
-                placeholder="Video URL"
+                placeholder="Video URL*"
                 required
               />
             </div>
@@ -151,7 +205,6 @@ const PhysicalGameReg = () => {
                 value={formData.score}
                 onChange={handleInputChange}
                 placeholder="Provide Scoring Pattern"
-                required
               />
             </div>
 
@@ -165,16 +218,18 @@ const PhysicalGameReg = () => {
               />
             </div>
 
-            <Toaster/>
+            <Toaster />
 
             <button type="submit" className="login-btn">
               Submit
             </button>
 
             <div className="input-group">
-              <span>Note : Please upload your video on google drive and make sure your video is on public mode</span>
+              <span>
+                Note : Please upload your video on google drive and make sure
+                your video is on public mode
+              </span>
             </div>
-           
           </form>
         </div>
       </div>

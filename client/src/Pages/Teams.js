@@ -5,6 +5,7 @@ import Team1 from "../Images/Teams/Team1.jpeg";
 import Team2 from "../Images/Teams/Team2.jpeg";
 import Team3 from "../Images/Teams/Team3.jpeg";
 import Team4 from "../Images/Teams/Team4.jpeg";
+import Team5 from "../Images/Teams/Team5.jpg";
 
 const Teams = () => {
   const teamMembers = [
@@ -18,7 +19,7 @@ const Teams = () => {
       name: "Dr Muthukumar Chockalingam",
       role: "Director, R&D",
       image: `${Team2}`,
-      bio: "Dr. Muthukumar Chockalingam, R&D Director at a startup, spearheads cutting-edge research in healthcare, diagnostics, learning, mental health, and sensor technology, pioneering innovations at the intersection of technology and well-being.",
+      bio: "Dr. Muthukumar Chockalingam is an Associate Professor of Chemistry at Acharya Institute of Technology, Bengaluru, and concurrently holds the position of Director of Research and Development at the startup. His active involvement in cutting-edge research extends across the intersection of technology and well-being, spanning healthcare, diagnostics, education, mental health, and sensor technology. Dr. Muthukumar leads the charge in initiating innovative projects within these diverse domains.",
     },
     {
       name: "Krishna Raju R",
@@ -31,6 +32,12 @@ const Teams = () => {
       role: "Software Engineer",
       image: `${Team4}`,
       bio: "Rakesh Kumar, SDE, a computer science engineer and professional web developer, combines technical expertise with creativity to craft dynamic and efficient websites. His skills contribute to seamless digital experiences, reflecting a passion for innovation.",
+    },
+    {
+      name: "Dr. B. Jagan Mohan",
+      role: "Design Researcher",
+      image: `${Team5}`,
+      bio: "Dr. B. Jagan Mohan, a Design and Technology enthusiast and design researcher, holds a Ph.D. in Visual Arts with a specialization in digital media and visualization. With 18 years in academia, specializing in Multimedia Design and Animation, currently working as an Associate Professor, in Acharya School of Design. His interest includes user-centric product design. He excels as a design consultant, bringing both expertise and passion to the field.",
     },
     // Add more team members as needed
   ];

@@ -157,6 +157,8 @@ const SignupPage = () => {
                 <option value="Child Psychologist">Child Psychologist</option>
                 <option value="Pediatric Therapist">Pediatric Therapist</option>
                 <option value="Nursery Teacher">Nursery Teacher</option>
+                <option value="Primary School Teacher">Primary School Teacher</option>
+                <option value="Physical Trainer">Physical Trainer</option>
               </select>
             </div>
 
