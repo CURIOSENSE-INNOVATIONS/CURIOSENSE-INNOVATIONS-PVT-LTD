@@ -50,8 +50,10 @@ const physicalGameRegSchema = new mongoose.Schema({
   level: {
     type: String,
     require: true,
-  },
-  
+  }
+},
+{
+  timestamps: true,
 });
 
 export const PhysicalGameReg = mongoose.model(

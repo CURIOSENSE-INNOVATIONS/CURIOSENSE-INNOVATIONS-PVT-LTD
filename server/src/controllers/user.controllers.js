@@ -1,6 +1,7 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { User } from "../models/user.model.js";
+import { PhysicalGameReg } from "../models/physicalGameReg.model.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import jwt from "jsonwebtoken";
 
@@ -89,6 +90,67 @@ const registerUser = asyncHandler(async (req, res) => {
   return res
     .status(201)
     .json(new ApiResponse(200, createdUser, "User registered Successfully"));
+});
+
+const physicalGameReg = asyncHandler(async (req, res) => {
+  const {
+    gametitle,
+    age,
+    gender,
+    category,
+    subcategory,
+    howtoplay,
+    benefitsofplaying,
+    itemsrequied,
+    url,
+    score,
+    level,
+  } = req.body;
+
+  if (
+    [
+      gametitle,
+      age,
+      gender,
+      category,
+      subcategory,
+      howtoplay,
+      benefitsofplaying,
+      itemsrequied,
+      url,
+      score,
+      level,
+    ].some((field) => field?.trim() === "")
+  ) {
+    throw new ApiError(400, "All fields are required");
+  }
+
+  const existedGame = await User.findOne({
+    $or: [{ gametitle }],
+  });
+
+  if (existedGame) {
+    throw new ApiError(409, "User with Game all ready exist");
+  }
+
+  const physicalGameReg = await PhysicalGameReg.create({
+    gametitle,
+    age,
+    gender,
+    category,
+    subcategory,
+    howtoplay,
+    benefitsofplaying,
+    itemsrequied,
+    url,
+    score,
+    level,
+  });
+
+
+  return res
+    .status(201)
+    .json(new ApiResponse(200, "Game registered Successfully"));
 });
 
 const loginUser = asyncHandler(async (req, res) => {
@@ -221,5 +283,10 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
   }
 });
 
-
-export { registerUser, loginUser, logoutUser, refreshAccessToken };
+export {
+  registerUser,
+  loginUser,
+  logoutUser,
+  refreshAccessToken,
+  physicalGameReg,
+};

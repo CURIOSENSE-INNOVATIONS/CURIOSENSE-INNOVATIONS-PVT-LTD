@@ -3,6 +3,7 @@ import {
   registerUser,
   loginUser,
   logoutUser,
+  physicalGameReg,
   refreshAccessToken
 } from "../controllers/user.controllers.js";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
@@ -10,6 +11,7 @@ import { verifyJWT } from "../middlewares/auth.middleware.js";
 const router = Router();
 
 router.route("/register").post(registerUser);
+router.route("/physicalgamereg").post(physicalGameReg);
 router.route("/login").post(loginUser);
 
 //secured routes
