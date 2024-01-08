@@ -28,16 +28,16 @@ const Teams = () => {
       bio: "Krishna Raju R, Chief Technology Officer, excels in product design, hardware development, and robotics. A mechatronics engineer, proficient in 3D printing, CAD, and effective project management, contributing to innovative solutions at the intersection of technology and engineering.",
     },
     {
-      name: "Rakesh Kumar",
-      role: "Software Engineer",
-      image: `${Team4}`,
-      bio: "Rakesh Kumar, SDE, a computer science engineer and professional web developer, combines technical expertise with creativity to craft dynamic and efficient websites. His skills contribute to seamless digital experiences, reflecting a passion for innovation.",
-    },
-    {
       name: "Dr. B. Jagan Mohan",
       role: "Design Researcher",
       image: `${Team5}`,
       bio: "Dr. B. Jagan Mohan, a Design and Technology enthusiast and design researcher, holds a Ph.D. in Visual Arts with a specialization in digital media and visualization. With 18 years in academia, specializing in Multimedia Design and Animation, currently working as an Associate Professor, in Acharya School of Design. His interest includes user-centric product design. He excels as a design consultant, bringing both expertise and passion to the field.",
+    },
+    {
+      name: "Rakesh Kumar",
+      role: "Software Engineer",
+      image: `${Team4}`,
+      bio: "Rakesh Kumar, SDE, a computer science engineer and professional web developer, combines technical expertise with creativity to craft dynamic and efficient websites. His skills contribute to seamless digital experiences, reflecting a passion for innovation.",
     },
     // Add more team members as needed
   ];
