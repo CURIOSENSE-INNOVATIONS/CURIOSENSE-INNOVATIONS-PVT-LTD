@@ -19,6 +19,7 @@ const LoginPage = () => {
 
   const [formData, setFormData] = useState(initialFormData);
   const [auth, setAuth] = useAuth();
+  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -29,6 +30,7 @@ const LoginPage = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       const response = await axios.post(
@@ -67,7 +69,9 @@ const LoginPage = () => {
       } else {
         console.error("Network error:", error);
         toast.error("Network error");
-      }
+      } 
+    }finally {
+      setLoading(false);
     }
   };
 
@@ -75,7 +79,7 @@ const LoginPage = () => {
     <div className="login-container">
       <div className="login-box">
         <h2>Login To CurioFit</h2>
-
+        {loading && <div>Loading...</div>}
         <form onSubmit={handleLogin}>
           <div className="input-group">
             <label htmlFor="email">Email Id</label>
