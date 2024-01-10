@@ -12,6 +12,7 @@ import {
   TEAM,
   AWARDS,
   LOGIN,
+  DASHBOARD,
 } from "../Routes/Routes";
 import { useAuth } from "../Context/auth";
 
@@ -60,9 +61,7 @@ const NavBar = () => {
           <Link to={INVESTORS} onClick={toggleNavbar}>
             Investors
           </Link>
-          <Link to={CONTACT} onClick={toggleNavbar}>
-            Contact Us
-          </Link>
+          
           {!auth.user ? (
             <>
               <Link to={LOGIN} onClick={toggleNavbar}>
@@ -71,6 +70,9 @@ const NavBar = () => {
             </>
           ) : (
             <>
+              <Link to={DASHBOARD} onClick={toggleNavbar}>
+                Dashboard
+              </Link>
               <Link to={LOGIN} onClick={handleLogout}>
                 LogOut
               </Link>

@@ -41,7 +41,7 @@ const PhysicalGameReg = () => {
 
         if (res.status === 201) {
           
-          toast.success("Registration successful!!");
+          toast.success("Your Idea Save in our database");
         } else {
           toast.error(`Server error: ${res.message}`);
         }
@@ -49,17 +49,17 @@ const PhysicalGameReg = () => {
 
       .catch((error) => {
         if (error.response) {
-          // Check if the user already exists
+          
           if (error.response.status === 409) {
             toast.error("User already exists.");
           } else {
             toast.error(`Server error: ${error.response.data.message}`);
           }
         } else if (error.request) {
-          // The request was made but no response was received
+         
           toast.error("Network error. Please try again later.");
         } else {
-          // Something happened in setting up the request that triggered an Error
+      
           toast.error("An unexpected error occurred. Please try again.");
         }
       });

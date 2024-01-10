@@ -23,7 +23,7 @@ const LoginPage = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((formData) => ({ ...formData, [name]: value }));
   };
 
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ const LoginPage = () => {
         formData
       );
 
-     if (response.status === 200) {
+      if (response.status === 200) {
         const userData = response.data.data.user;
 
         setAuth({
@@ -49,7 +49,7 @@ const LoginPage = () => {
         localStorage.setItem("auth", JSON.stringify(userData));
 
         await navigate(DASHBOARD);
-        toast.success("User LoggedIn Successfully")
+        toast.success("User LoggedIn Successfully");
       } else {
         toast.error(response.data);
       }
@@ -69,8 +69,8 @@ const LoginPage = () => {
       } else {
         console.error("Network error:", error);
         toast.error("Network error");
-      } 
-    }finally {
+      }
+    } finally {
       setLoading(false);
     }
   };

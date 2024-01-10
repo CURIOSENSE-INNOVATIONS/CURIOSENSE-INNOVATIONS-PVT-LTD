@@ -1,13 +1,11 @@
 import React from "react";
 import "./Footer.css";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import {
-  faPhone,
-  faEnvelope
-} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { CONTACT } from "../Routes/Routes";
 
 const Footer = () => {
   return (
@@ -30,14 +28,19 @@ const Footer = () => {
           <a href="mailto:curiosense.co.in@gmail.com">
             <FontAwesomeIcon icon={faEnvelope} size="2xl" className="icons" />
           </a>
-          <a href="https://www.linkedin.com/company/curiosense-innovations-private-limited/" target="_blank">
+          <a
+            href="https://www.linkedin.com/company/curiosense-innovations-private-limited/"
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faLinkedinIn} size="2xl" className="icons" />
           </a>
           {/* <FontAwesomeIcon icon={faInstagram} size="2xl" /> */}
         </div>
         <span>Terms Of Use</span>
         <span> | </span>
-        <span>Privacy Policy</span>
+        <Link className="span" to={CONTACT}>
+          <span>Contact Us</span>
+        </Link>
         <span> | </span>
         <Link className="span" to="https://www.linkedin.com/in/rakesh-kumar18/">
           <span>Developer</span>
