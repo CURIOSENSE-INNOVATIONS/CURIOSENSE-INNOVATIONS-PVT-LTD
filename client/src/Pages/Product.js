@@ -7,7 +7,7 @@ import Product2 from "../Images/Products/Product2.jpeg";
 
 const Product = () => {
   return (
-    <div>
+    <div className="product-sec">
       <div className="title">Our Products</div>
       <div className="productSec">
         <ProductCard

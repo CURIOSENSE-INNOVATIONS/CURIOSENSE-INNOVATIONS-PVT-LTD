@@ -3,14 +3,35 @@ import "../Components/NavBar.css";
 import Logo from "../Images/Logo.jpeg";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { ABOUT, CONTACT, HOME, INVESTORS, PRODUCT, TEAM, AWARDS } from "../Routes/Routes";
+import {
+  ABOUT,
+  CONTACT,
+  HOME,
+  INVESTORS,
+  PRODUCT,
+  TEAM,
+  AWARDS,
+  LOGIN,
+  DASHBOARD,
+} from "../Routes/Routes";
+import { useAuth } from "../Context/auth";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [auth , setAuth] = useAuth();
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleLogout = () => {
+    setIsOpen(!isOpen);
+    setAuth({
+      ...auth,
+      user : null,
+    })
+    localStorage.removeItem("auth")
+  }
 
   return (
     <nav className="navbar">
@@ -35,14 +56,28 @@ const NavBar = () => {
             Team
           </Link>
           <Link to={AWARDS} onClick={toggleNavbar}>
-          Awards 
+            Awards
           </Link>
           <Link to={INVESTORS} onClick={toggleNavbar}>
             Investors
           </Link>
-          <Link to={CONTACT} onClick={toggleNavbar}>
-            Contact Us
-          </Link>
+          
+          {!auth.user ? (
+            <>
+              <Link to={LOGIN} onClick={toggleNavbar}>
+                LogIn
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to={DASHBOARD} onClick={toggleNavbar}>
+                Dashboard
+              </Link>
+              <Link to={LOGIN} onClick={handleLogout}>
+                LogOut
+              </Link>
+            </>
+          )}
         </div>
         <div className="navbar-toggle" onClick={toggleNavbar}>
           <span></span>
